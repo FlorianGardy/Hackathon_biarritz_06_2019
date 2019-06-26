@@ -4,7 +4,7 @@ import CardDecks from "../components/card_decks";
 const Home = () => {
   return (
     <div>
-      <h1>HOME</h1>
+      <h2>HOME</h2>
       <CardDecks />
     </div>
   );

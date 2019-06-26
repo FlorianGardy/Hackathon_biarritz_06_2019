@@ -1,6 +1,8 @@
 import React from "react";
 import { Card, CardText, CardDeck, CardBody, CardHeader } from "reactstrap";
 
+import NewDuels from "../fonctions/dernierduels.fonction.deck";
+
 const cardDecks = props => {
   return (
     <CardDeck>
@@ -10,8 +12,7 @@ const cardDecks = props => {
         </CardHeader>
         <CardBody>
           <CardText>
-            This is a wider card with supporting text below as a natural lead-in
-            to additional content. This content is a little bit longer.
+            <NewDuels />
           </CardText>
         </CardBody>
       </Card>
