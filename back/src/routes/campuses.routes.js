@@ -1,9 +1,5 @@
-const { updateCampuses, getCampuses } = require("../db/campus/campus.actions");
-const {
-  updateWilders,
-  getWildersByCampus
-} = require("../db/wilder/wilder.actions");
-const { updateMatches, calculateElos } = require("../db/match/match.actions");
+const { getCampuses } = require("../db/campus/campus.actions");
+const { getWildersByCampus } = require("../db/wilder/wilder.actions");
 
 module.exports = [
   {
@@ -11,9 +7,6 @@ module.exports = [
     path: "/campuses",
     handler: async (request, h) => {
       try {
-        await updateCampuses();
-        await updateMatches();
-        await calculateElos();
         return await getCampuses();
       } catch (error) {
         console.log(error);
@@ -26,8 +19,6 @@ module.exports = [
     handler: async (request, h) => {
       try {
         const campusId = request.params.campusId;
-        await updateCampuses();
-        await updateWilders();
         return getWildersByCampus(campusId);
       } catch (error) {
         console.log(error);

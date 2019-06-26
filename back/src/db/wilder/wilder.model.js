@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize");
 const sequelize = require("../connect");
-const Campus = require("../campus/campus.model");
+const { Campus } = require("../campus/campus.model");
 
 const Wilder = sequelize.define("wilder", {
   id: {
@@ -25,4 +25,4 @@ const Wilder = sequelize.define("wilder", {
   }
 });
 
-module.exports = Wilder;
+module.exports = { Wilder };
