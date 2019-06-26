@@ -11,7 +11,6 @@ const server = Hapi.server({
 
 server.route(require("./routes/campuses.routes"));
 server.route(require("./routes/matches.routes"));
-server.route(require("./routes/wilders.routes"));
 
 const init = async () => {
   const sequelize = require("./db/connect");
