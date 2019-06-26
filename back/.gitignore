@@ -10,3 +10,4 @@ _*
 .vs
 .vscode
 .idea
+.env
