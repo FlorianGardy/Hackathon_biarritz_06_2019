@@ -1,0 +1,68 @@
+{
+  "info": {
+    "_postman_id": "7e4f05c3-76ce-49c4-93fb-3d57e7203d14",
+    "name": "Hackathon_juin_19",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "GET matches",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3030/matches",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3030",
+          "path": ["matches"]
+        },
+        "description": "Recupere tout les matchs"
+      },
+      "response": []
+    },
+    {
+      "name": "GET wilders in Campus",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3030/campuses/1/wilders",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3030",
+          "path": ["campuses", "1", "wilders"]
+        },
+        "description": "Get all wilders"
+      },
+      "response": []
+    },
+    {
+      "name": "GET campus",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3030/campuses",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3030",
+          "path": ["campuses"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
