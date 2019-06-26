@@ -1,12 +1,13 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
+
 import {
   Collapse,
   Navbar,
   NavbarToggler,
   NavbarBrand,
   Nav,
-  NavItem,
-  NavLink
+  NavItem
 } from "reactstrap";
 
 export default class Example extends React.Component {
@@ -27,17 +28,18 @@ export default class Example extends React.Component {
     return (
       <div>
         <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">reactstrap</NavbarBrand>
+          <NavbarBrand>Wilders Fighting </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink href="/components/">Components</NavLink>
+              <NavItem className="mr-3">
+                <NavLink to="/">Home</NavLink>
               </NavItem>
-              <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">
-                  GitHub
-                </NavLink>
+              <NavItem className="mr-3">
+                <NavLink to="/campuses">Campuses</NavLink>
+              </NavItem>
+              <NavItem className="mr-3">
+                <NavLink to="/matches">Matches</NavLink>
               </NavItem>
             </Nav>
           </Collapse>
