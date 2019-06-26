@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize");
 const sequelize = require("../connect");
-const Campus = require("../campus/campus.model");
+const { Campus } = require("../campus/campus.model");
 
 const Match = sequelize.define("match", {
   id: {
@@ -50,4 +50,4 @@ const Match = sequelize.define("match", {
   }
 });
 
-module.exports = Match;
+module.exports = { Match };

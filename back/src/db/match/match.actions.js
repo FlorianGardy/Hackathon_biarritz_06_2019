@@ -1,5 +1,7 @@
+const { Match } = require("./match.model");
+
 // Update matches (from API data)
-function updateMatches() {
+function refreshMatches() {
   // Update matches process
 }
 
@@ -11,8 +13,7 @@ function calculateElos() {
 
 // Get all matches from DB
 function getMatches() {
-  const matches = [];
-  return matches;
+  return Match.findAll();
 }
 
-module.exports = { updateMatches, calculateElos, getMatches };
+module.exports = { refreshMatches, calculateElos, getMatches };

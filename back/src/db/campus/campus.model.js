@@ -1,6 +1,5 @@
 const Sequelize = require("sequelize");
 const sequelize = require("../connect");
-const Wilder = require("../wilder/wilder.model");
 
 const Campus = sequelize.define("campus", {
   uid: {
@@ -31,4 +30,4 @@ const Campus = sequelize.define("campus", {
   }
 });
 
-module.exports = Campus;
+module.exports = { Campus };

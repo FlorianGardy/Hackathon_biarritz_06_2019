@@ -1,12 +1,14 @@
-// Update campuses (from API data)
-function updateCampuses() {
-  // Update campuses process
+const { Campus } = require("./campus.model");
+const getCampusesFromAPI = require("../../API/getCampusFromAPI");
+
+// refresh campuses (from API data)
+async function refreshCampuses() {
+  // Update campus process
 }
 
-// Get all capuses from DB
+// Get all campuses from DB
 function getCampuses() {
-  const campus = [];
-  return campus;
+  return Campus.findAll();
 }
 
-module.exports = { updateCampuses, getCampuses };
+module.exports = { refreshCampuses, getCampuses };
