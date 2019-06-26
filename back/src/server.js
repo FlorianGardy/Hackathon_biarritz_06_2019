@@ -27,6 +27,19 @@ const init = async () => {
   console.log("Server running on %s", server.info.uri);
 };
 
+// Logs management
+server.events.on("response", function(request) {
+  console.log(
+    request.info.remoteAddress +
+      ": " +
+      request.method.toUpperCase() +
+      " " +
+      request.path +
+      " --> " +
+      request.response.statusCode
+  );
+});
+
 process.on("unhandledRejection", err => {
   console.log(err);
   process.exit(1);
