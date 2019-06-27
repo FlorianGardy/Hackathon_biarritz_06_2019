@@ -1,11 +1,11 @@
 const { Campus } = require("./campus.model");
-const getCampusesFromAPI = require("../../API/getCampusFromAPI");
+const getCampusesFromAPI = require("../../API/getCampusesFromAPI");
 
 // refresh campuses (from API data)
 async function refreshCampuses() {
   const campusesFromApi = await getCampusesFromAPI();
   const campusesFromDb = await Campus.findAll();
-  campusesFromApi.data.map(async campusAPI => {
+  campusesFromApi.map(async campusAPI => {
     let found = false;
     for (let i = 0; i < campusesFromDb.length; i++) {
       if (campusesFromDb[i].uid === campusAPI.uid) {
@@ -14,8 +14,8 @@ async function refreshCampuses() {
       }
     }
     if (found === false) {
-      await Campus.create(campusAPI)
-      );
+      await Campus.create(campusAPI);
+      console.log(campusAPI.name, "added to database");
     }
   });
 }
