@@ -21,7 +21,7 @@ const CampusView = ({ campuses }) => {
           {campuses.map((campus, i) => (
             <CampusRow
               key={i}
-              elo={campus.elo}
+              elo={campus.currentElo}
               country={campus.country}
               name={campus.name}
               city={campus.city}
