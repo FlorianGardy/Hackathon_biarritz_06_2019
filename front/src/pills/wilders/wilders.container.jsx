@@ -1,16 +1,20 @@
 import React, { useEffect } from "react";
 import WildersView from "./wilders.view";
 import { connect } from "react-redux";
-import { updateWilders } from "../wilders/wilders.action";
+import { updateWilders } from "../wilders/wilders.actions";
 
-const WildersContainer = ({ dispatch, wilders }) => {
+const WildersContainer = ({ dispatch, wilders, campusId }) => {
   useEffect(() => {
     dispatch(updateWilders());
   }, [dispatch]);
 
   return (
     <div>
-      <WildersView wilders={wilders} />
+      <WildersView
+        wildersFromOneCampus={wilders.filter(
+          wilder => wilder.campus === campusId
+        )}
+      />
     </div>
   );
 };

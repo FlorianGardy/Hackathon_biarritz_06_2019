@@ -96,3 +96,30 @@ export const campuses = [
     }
   }
 ];
+export const wilders = [
+  {
+    firstname: "marlène",
+    lastname: "angouillant",
+    campus: "bia"
+  },
+  {
+    firstname: "super",
+    lastname: "man",
+    campus: "lis"
+  },
+  {
+    firstname: "mark",
+    lastname: "zuckerberg",
+    campus: "par"
+  },
+  {
+    firstname: "françois",
+    lastname: "lembrouille",
+    campus: "bru"
+  },
+  {
+    firstname: "baptiste",
+    lastname: "hyver",
+    campus: "bia"
+  }
+];

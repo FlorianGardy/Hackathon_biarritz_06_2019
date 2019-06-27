@@ -1,8 +1,10 @@
 import React from "react";
-import WildersList from "../../components/WildersList";
+import WilderRow from "../../components/WilderRow";
 import { Table } from "reactstrap";
 
-const WildersView = ({ wilders }) => {
+const WildersView = ({ wildersFromOneCampus }) => {
+  console.log(wildersFromOneCampus);
+
   return (
     <Table responsive>
       <thead>
@@ -12,8 +14,8 @@ const WildersView = ({ wilders }) => {
         </tr>
       </thead>
       <tbody>
-        {wilders.filter((wilder, i) => (
-          <WildersList
+        {wildersFromOneCampus.map((wilder, i) => (
+          <WilderRow
             key={i}
             firstname={wilder.firstname}
             lastname={wilder.lastname}
