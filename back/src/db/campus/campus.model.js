@@ -2,6 +2,11 @@ const Sequelize = require("sequelize");
 const sequelize = require("../connect");
 
 const Campus = sequelize.define("campus", {
+  id: {
+    type: Sequelize.INTEGER,
+    primaryKey: true,
+    autoIncrement: true
+  },
   uid: {
     type: Sequelize.STRING,
     allowNull: false

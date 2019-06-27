@@ -6,7 +6,7 @@ const Match = sequelize.define("match", {
   id: {
     type: Sequelize.INTEGER,
     primaryKey: true,
-    allowNull: false
+    autoIncrement: true
   },
   homeTeam: {
     type: Sequelize.INTEGER,
