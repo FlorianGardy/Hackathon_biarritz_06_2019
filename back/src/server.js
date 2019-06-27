@@ -22,7 +22,7 @@ server.route(require("./routes/matches.routes"));
 
 const init = async () => {
   const sequelize = require("./db/connect");
-  sequelize.sync({ force: true });
+  sequelize.sync();
   sequelize
     .authenticate()
     .then(() => {
@@ -33,10 +33,11 @@ const init = async () => {
     });
   await server.start();
   console.log("Server running on %s", server.info.uri);
-  cron.schedule("*/5 * * * *", async () => {
-    await refreshWilders();
+  cron.schedule("*/2 * * * *", async () => {
     await refreshCampuses();
+    await refreshWilders();
     await refreshMatches();
+    console.log("Data refreshed from API");
   });
 };
 
