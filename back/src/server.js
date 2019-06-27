@@ -11,7 +11,10 @@ const { refreshMatches } = require("./db/match/match.actions");
 
 const server = Hapi.server({
   port: 3030,
-  host: "localhost"
+  host: "localhost",
+  routes: {
+    cors: true
+  }
 });
 
 server.route(require("./routes/campuses.routes"));
@@ -19,7 +22,7 @@ server.route(require("./routes/matches.routes"));
 
 const init = async () => {
   const sequelize = require("./db/connect");
-  sequelize.sync();
+  sequelize.sync({ force: true });
   sequelize
     .authenticate()
     .then(() => {
@@ -30,11 +33,11 @@ const init = async () => {
     });
   await server.start();
   console.log("Server running on %s", server.info.uri);
-  cron.schedule("*/5 * * * *", async () => {
-    await refreshWilders();
-    await refreshCampuses();
-    await refreshMatches();
-  });
+  // cron.schedule("*/2 * * * * *", async () => {
+  await refreshWilders();
+  await refreshCampuses();
+  await refreshMatches();
+  // });
 };
 
 // Logs management
