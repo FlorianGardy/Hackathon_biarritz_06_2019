@@ -1,8 +1,11 @@
 "use strict";
 const Sequelize = require("sequelize");
 require("dotenv").config();
+const cron = require("node-cron");
 
 const Hapi = require("@hapi/hapi");
+
+const { refreshCampuses } = require("./db/campus/campus.actions");
 
 const server = Hapi.server({
   port: 3030,
@@ -14,6 +17,7 @@ server.route(require("./routes/matches.routes"));
 
 const init = async () => {
   const sequelize = require("./db/connect");
+  // sequelize.sync({ force: process.env.NODE_ENV !== "production" });
   sequelize.sync();
   sequelize
     .authenticate()
@@ -25,6 +29,10 @@ const init = async () => {
     });
   await server.start();
   console.log("Server running on %s", server.info.uri);
+  // cron.schedule("*/2 * * * *", () => {
+  cron.schedule("*/2 * * * * *", async () => {
+    await refreshCampuses();
+  });
 };
 
 // Logs management

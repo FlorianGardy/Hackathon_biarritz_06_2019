@@ -3,7 +3,13 @@ const getCampusesFromAPI = require("../../API/getCampusFromAPI");
 
 // refresh campuses (from API data)
 async function refreshCampuses() {
-  // Update campus process
+  const campusFromApi = await getCampusesFromAPI();
+  const campusFromDb = await Campus.findAll();
+  campusFromApi.data.map(async campusAPI => {
+    if (campusFromDb.length === 0) {
+      await Campus.create(campusAPI);
+    }
+  });
 }
 
 // Get all campuses from DB

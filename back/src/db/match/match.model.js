@@ -9,26 +9,26 @@ const Match = sequelize.define("match", {
     allowNull: false
   },
   homeTeam: {
-    type: Sequelize.STRING,
+    type: Sequelize.INTEGER,
     allowNull: false,
     references: {
       model: Campus,
-      key: "uid"
+      key: "id"
     }
   },
   awayTeam: {
-    type: Sequelize.STRING,
+    type: Sequelize.INTEGER,
     allowNull: false,
     references: {
       model: Campus,
-      key: "uid"
+      key: "id"
     }
   },
   isoDate: {
     type: Sequelize.STRING,
     allowNull: false
   },
-  winnerUid: {
+  winnerId: {
     type: Sequelize.STRING,
     allowNull: false
   },

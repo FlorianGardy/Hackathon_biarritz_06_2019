@@ -16,11 +16,11 @@ const Wilder = sequelize.define("wilder", {
     allowNull: false
   },
   campus: {
-    type: Sequelize.STRING,
+    type: Sequelize.INTEGER,
     allowNull: false,
     references: {
       model: Campus,
-      key: "uid"
+      key: "id"
     }
   }
 });
