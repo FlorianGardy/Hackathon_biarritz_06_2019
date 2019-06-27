@@ -21,14 +21,14 @@ const CampusView = ({ campuses }) => {
           {campuses.map((campus, i) => (
             <CampusRow
               key={i}
-              // elo={campus.elo}
+              elo={campus.elo}
               country={campus.country}
               name={campus.name}
               city={campus.city}
               uid={campus.uid}
-              manager={campus.manager.lastname}
+              managerLn={campus.manager.lastname}
+              managerFn={campus.manager.firstname}
               creationDate={campus.creation}
-              // button={campus.wildersList}
             />
           ))}
         </tbody>
