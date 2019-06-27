@@ -1,12 +1,20 @@
 "use strict";
 const Sequelize = require("sequelize");
 require("dotenv").config();
+const cron = require("node-cron");
 
 const Hapi = require("@hapi/hapi");
 
+const { refreshCampuses } = require("./db/campus/campus.actions");
+const { refreshWilders } = require("./db/wilder/wilder.actions");
+const { refreshMatches } = require("./db/match/match.actions");
+
 const server = Hapi.server({
   port: 3030,
-  host: "localhost"
+  host: "localhost",
+  routes: {
+    cors: true
+  }
 });
 
 server.route(require("./routes/campuses.routes"));
@@ -25,6 +33,14 @@ const init = async () => {
     });
   await server.start();
   console.log("Server running on %s", server.info.uri);
+
+  // Data refresh from API (launched periodically)
+  cron.schedule("*/2 * * * *", async () => {
+    await refreshCampuses();
+    await refreshWilders();
+    await refreshMatches();
+    console.log("Data refreshed from API");
+  });
 };
 
 // Logs management

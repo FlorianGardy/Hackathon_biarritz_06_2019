@@ -4,8 +4,9 @@ const { Campus } = require("../campus/campus.model");
 
 const Wilder = sequelize.define("wilder", {
   id: {
-    type: Sequelize.STRING,
-    primaryKey: true
+    type: Sequelize.INTEGER,
+    primaryKey: true,
+    autoIncrement: true
   },
   firstname: {
     type: Sequelize.STRING,
@@ -17,11 +18,11 @@ const Wilder = sequelize.define("wilder", {
   },
   campus: {
     type: Sequelize.STRING,
-    allowNull: false,
-    references: {
-      model: Campus,
-      key: "uid"
-    }
+    allowNull: false
+    // references: {
+    //   model: Campus,
+    //   key: "id"
+    // }
   }
 });
 

@@ -6,23 +6,23 @@ const Match = sequelize.define("match", {
   id: {
     type: Sequelize.INTEGER,
     primaryKey: true,
-    allowNull: false
+    autoIncrement: true
   },
   homeTeam: {
     type: Sequelize.STRING,
-    allowNull: false,
-    references: {
-      model: Campus,
-      key: "uid"
-    }
+    allowNull: false
+    // references: {
+    //   model: Campus,
+    //   key: "uid"
+    // }
   },
   awayTeam: {
     type: Sequelize.STRING,
-    allowNull: false,
-    references: {
-      model: Campus,
-      key: "uid"
-    }
+    allowNull: false
+    // references: {
+    //   model: Campus,
+    //   key: "uid"
+    // }
   },
   isoDate: {
     type: Sequelize.STRING,
@@ -30,23 +30,27 @@ const Match = sequelize.define("match", {
   },
   winnerUid: {
     type: Sequelize.STRING,
-    allowNull: false
+    allowNull: true
+    // references: {
+    //   model: Campus,
+    //   key: "uid"
+    // }
   },
   homeElo: {
     type: Sequelize.STRING,
-    allowNull: false
+    allowNull: true
   },
   awayElo: {
     type: Sequelize.STRING,
-    allowNull: false
+    allowNull: true
   },
   homeEloDiff: {
     type: Sequelize.STRING,
-    allowNull: false
+    allowNull: true
   },
   awayEloDiff: {
     type: Sequelize.STRING,
-    allowNull: false
+    allowNull: true
   }
 });
 

@@ -2,9 +2,13 @@ const Sequelize = require("sequelize");
 const sequelize = require("../connect");
 
 const Campus = sequelize.define("campus", {
+  id: {
+    type: Sequelize.INTEGER,
+    primaryKey: true,
+    autoIncrement: true
+  },
   uid: {
     type: Sequelize.STRING,
-    primaryKey: true,
     allowNull: false
   },
   name: {
@@ -20,7 +24,7 @@ const Campus = sequelize.define("campus", {
     allowNull: false
   },
   manager: {
-    type: Sequelize.ARRAY(Sequelize.JSON),
+    type: Sequelize.JSON,
     allowNull: false
   },
   currentElo: {
