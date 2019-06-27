@@ -6,6 +6,8 @@ const cron = require("node-cron");
 const Hapi = require("@hapi/hapi");
 
 const { refreshCampuses } = require("./db/campus/campus.actions");
+const { refreshWilders } = require("./db/wilder/wilder.actions");
+const { refreshMatches } = require("./db/match/match.actions");
 
 const server = Hapi.server({
   port: 3030,
@@ -17,7 +19,6 @@ server.route(require("./routes/matches.routes"));
 
 const init = async () => {
   const sequelize = require("./db/connect");
-  // sequelize.sync({ force: process.env.NODE_ENV !== "production" });
   sequelize.sync();
   sequelize
     .authenticate()
@@ -29,9 +30,10 @@ const init = async () => {
     });
   await server.start();
   console.log("Server running on %s", server.info.uri);
-  // cron.schedule("*/2 * * * *", () => {
-  cron.schedule("*/2 * * * * *", async () => {
+  cron.schedule("*/5 * * * *", async () => {
+    await refreshWilders();
     await refreshCampuses();
+    await refreshMatches();
   });
 };
 
