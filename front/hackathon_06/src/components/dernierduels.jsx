@@ -25,17 +25,13 @@ const duels = [
 
 const NewDuels = () => {
   console.log(duels);
-  return (
-    <ul>
-      {duels
-        .map(duel => (
-          <li>
-            {duel.homeTeam} / {duel.awayTeam} {duel.winnerUid}
-          </li>
-        ))
-        .slice(0, 3)}
-    </ul>
-  );
+  return duels
+    .map((duel, index) => (
+      <div key={index}>
+        {duel.homeTeam} / {duel.awayTeam} {duel.winnerUid}
+      </div>
+    ))
+    .slice(0, 3);
 };
 
 export default NewDuels;

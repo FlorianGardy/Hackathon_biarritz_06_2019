@@ -121,24 +121,20 @@ const NewClassement = () => {
 
   return (
     <div>
-      <ul>
-        {classement
-          .map(classe => (
-            <li className="text-success">
-              {classe.name} - {classe.country} - {classe.city}
-            </li>
-          ))
-          .slice(0, 3)}
-      </ul>
-      <ul>
-        {classement
-          .map(classe => (
-            <li className="text-danger">
-              {classe.name} - {classe.country} - {classe.city}
-            </li>
-          ))
-          .slice(classement.length - 3, classement.length)}
-      </ul>
+      {classement
+        .map((classe, index) => (
+          <div key={index} className="text-success">
+            {classe.name} - {classe.country} - {classe.city}
+          </div>
+        ))
+        .slice(0, 3)}
+      {classement
+        .map((classe, index) => (
+          <div key={index} className="text-danger">
+            {classe.name} - {classe.country} - {classe.city}
+          </div>
+        ))
+        .slice(classement.length - 3, classement.length)}
     </div>
   );
 };

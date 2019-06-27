@@ -1,8 +1,8 @@
 import React from "react";
-import { Card, CardText, CardDeck, CardBody, CardHeader } from "reactstrap";
+import { Card, CardDeck, CardBody, CardHeader } from "reactstrap";
 
-import NewDuels from "../fonctions/dernierduels.fonction.deck";
-import NewClassement from "../fonctions/classement.fonction.deck";
+import NewDuels from "./dernierduels";
+import NewClassement from "./classement";
 
 const cardDecks = props => {
   return (
@@ -12,9 +12,7 @@ const cardDecks = props => {
           <h3>Dernier Duels.</h3>
         </CardHeader>
         <CardBody>
-          <CardText>
-            <NewDuels />
-          </CardText>
+          <NewDuels />
         </CardBody>
       </Card>
       <Card>
@@ -22,9 +20,7 @@ const cardDecks = props => {
           <h3>Classement / Campus.</h3>
         </CardHeader>
         <CardBody>
-          <CardText>
-            <NewClassement />
-          </CardText>
+          <NewClassement />
         </CardBody>
       </Card>
     </CardDeck>
