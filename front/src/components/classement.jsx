@@ -116,9 +116,6 @@ const classement = [
 ];
 
 const NewClassement = () => {
-  console.log(classement);
-  console.log(classement.length - 3, classement.length);
-
   return (
     <div>
       {classement

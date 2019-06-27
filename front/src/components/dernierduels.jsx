@@ -24,7 +24,6 @@ const duels = [
 ];
 
 const NewDuels = () => {
-  console.log(duels);
   return duels
     .map((duel, index) => (
       <div key={index}>
