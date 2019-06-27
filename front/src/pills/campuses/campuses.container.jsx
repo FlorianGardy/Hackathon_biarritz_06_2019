@@ -5,8 +5,6 @@ import { updateCampuses } from "../campuses/campuses.action";
 
 const CampusContainer = ({ dispatch, campuses }) => {
   useEffect(() => {
-    console.log("coucou");
-
     dispatch(updateCampuses());
   }, [dispatch]);
 

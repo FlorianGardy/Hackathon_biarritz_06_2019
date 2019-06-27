@@ -1,31 +1,43 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
 
-const CampusRow = ({ country, name, city, uid, manager, creationDate }) => {
+const CampusRow = ({
+  elo,
+  country,
+  name,
+  city,
+  uid,
+  managerFn,
+  managerLn,
+  creationDate
+}) => {
   return (
     <tr>
-      <th scope="row"></th>
-
+      <td>{elo}</td>
       <td>{country}</td>
       <td>{name}</td>
       <td>
         {city}-{uid}
       </td>
-      <td>{uid}</td>
-      <td>{manager}</td>
+      <td>
+        {managerFn} {managerLn}
+      </td>
       <td>{creationDate}</td>
-      {/* <td>{button}</td> */}
+      <td>
+        <NavLink to={`/campuses/${uid}/wilders`}>List</NavLink>
+      </td>
     </tr>
   );
 };
 export default CampusRow;
 
 CampusRow.propTypes = {
+  elo: PropTypes.string.isRequired,
   country: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   city: PropTypes.string.isRequired,
   uid: PropTypes.string.isRequired,
   manager: PropTypes.object,
   creationDate: PropTypes.string
-  // button: PropTypes.func
 };

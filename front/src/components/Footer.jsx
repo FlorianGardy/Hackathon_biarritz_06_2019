@@ -1,12 +1,12 @@
 import React from "react";
-import { Nav } from "reactstrap";
+import { Navbar } from "reactstrap";
 
 function Footer() {
   return (
     <>
-      <Nav className="fixed-bottom navbar-light bg-light">
+      <Navbar className="fixed-bottom navbar-dark bg-dark text-light">
         Florian - Jonhattan - Perrine - Nathalie - Stéphane
-      </Nav>
+      </Navbar>
     </>
   );
 }
