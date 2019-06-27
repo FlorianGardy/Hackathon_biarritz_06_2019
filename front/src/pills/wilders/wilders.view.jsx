@@ -3,8 +3,6 @@ import WilderRow from "../../components/WilderRow";
 import { Table } from "reactstrap";
 
 const WildersView = ({ wildersFromOneCampus }) => {
-  console.log(wildersFromOneCampus);
-
   return (
     <Table responsive>
       <thead>

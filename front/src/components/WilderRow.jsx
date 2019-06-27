@@ -11,7 +11,7 @@ const WilderRow = ({ firstname, lastname }) => {
 };
 export default WilderRow;
 
-// WilderRow.propTypes = {
-//   firstname: PropTypes.string.isRequired,
-//   lastname: PropTypes.string.isRequired,
-// };
+WilderRow.propTypes = {
+  firstname: PropTypes.string.isRequired,
+  lastname: PropTypes.string.isRequired
+};

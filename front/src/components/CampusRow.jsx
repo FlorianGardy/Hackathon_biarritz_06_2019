@@ -32,12 +32,12 @@ const CampusRow = ({
 };
 export default CampusRow;
 
-// CampusRow.propTypes = {
-//   country: PropTypes.string.isRequired,
-//   name: PropTypes.string.isRequired,
-//   city: PropTypes.string.isRequired,
-//   uid: PropTypes.string.isRequired,
-//   manager: PropTypes.object,
-//   creationDate: PropTypes.string
-//   button: PropTypes.func,
-// };
+CampusRow.propTypes = {
+  elo: PropTypes.string.isRequired,
+  country: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  city: PropTypes.string.isRequired,
+  uid: PropTypes.string.isRequired,
+  manager: PropTypes.object,
+  creationDate: PropTypes.string
+};
