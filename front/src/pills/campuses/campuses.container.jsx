@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import CampusView from "./campuses.view";
 import { connect } from "react-redux";
-import { updateCampuses } from "../campuses/campuses.action";
+import { getCampuses } from "../campuses/campuses.action";
 
 const CampusContainer = ({ dispatch, campuses }) => {
   useEffect(() => {
-    dispatch(updateCampuses());
+    dispatch(getCampuses());
   }, [dispatch]);
 
   return (
