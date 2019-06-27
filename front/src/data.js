@@ -1,5 +1,6 @@
 export const campuses = [
   {
+    elo: 1000,
     name: "Biarritz Campus",
     city: "biarritz",
     country: "france",
@@ -11,6 +12,7 @@ export const campuses = [
     }
   },
   {
+    elo: 1000,
     name: "Berlin Campus",
     city: "berlin",
     country: "germany",
@@ -22,6 +24,7 @@ export const campuses = [
     }
   },
   {
+    elo: 1000,
     name: "Bordeaux Campus",
     city: "bordeaux",
     country: "france",
@@ -33,6 +36,7 @@ export const campuses = [
     }
   },
   {
+    elo: 1000,
     name: "Bucarest Campus",
     city: "bucarest",
     country: "france",
@@ -44,6 +48,7 @@ export const campuses = [
     }
   },
   {
+    elo: 1000,
     name: "London Campus",
     city: "london",
     country: "united kingdom",
@@ -55,6 +60,7 @@ export const campuses = [
     }
   },
   {
+    elo: 1000,
     name: "Madrid Campus",
     city: "madrid",
     country: "spain",
@@ -66,6 +72,7 @@ export const campuses = [
     }
   },
   {
+    elo: 1000,
     name: "Brussels Campus",
     city: "brussels",
     country: "belgium",
@@ -77,6 +84,7 @@ export const campuses = [
     }
   },
   {
+    elo: 1000,
     name: "Lisbon Campus",
     city: "lisbon",
     country: "portugal",
@@ -85,72 +93,6 @@ export const campuses = [
     manager: {
       firstname: "ana-sofia",
       lastname: "martins"
-    }
-  },
-  {
-    name: "Paris Campus",
-    city: "paris",
-    country: "france",
-    uid: "par",
-    creation: "01/11/2015",
-    manager: {
-      firstname: "marion",
-      lastname: "gigue"
-    }
-  },
-  {
-    name: "Marseille Campus",
-    city: "marseille",
-    country: "france",
-    uid: "mar",
-    creation: "01/10/2016",
-    manager: {
-      firstname: "caroline",
-      lastname: "larcié"
-    }
-  },
-  {
-    name: "Lille Campus",
-    city: "lille",
-    country: "france",
-    uid: "lil",
-    creation: "01/07/2017",
-    manager: {
-      firstname: "olivier",
-      lastname: "trentesaux"
-    }
-  },
-  {
-    name: "Tours Campus",
-    city: "tours",
-    country: "france",
-    uid: "tour",
-    creation: "05/10/2016",
-    manager: {
-      firstname: "olympe",
-      lastname: "trentesaux"
-    }
-  },
-  {
-    name: "Toulouse Campus",
-    city: "toulouse",
-    country: "france",
-    uid: "toul",
-    creation: "05/10/2012",
-    manager: {
-      firstname: "justine",
-      lastname: "lacousse"
-    }
-  },
-  {
-    name: "Strasbourg Campus",
-    city: "strasbourg",
-    country: "france",
-    uid: "stra",
-    creation: "25/02/2016",
-    manager: {
-      firstname: "gilles",
-      lastname: "samuel"
     }
   }
 ];
