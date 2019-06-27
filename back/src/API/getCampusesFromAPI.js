@@ -5,5 +5,10 @@ module.exports = function() {
     method: "get",
     url:
       "https://us-central1-rc-league.cloudfunctions.net/wildcodeschool/campuses"
-  });
+  }).then(data => dataSelection(data));
 };
+
+function dataSelection(rawData) {
+  const selectedData = rawData.data;
+  return selectedData;
+}
