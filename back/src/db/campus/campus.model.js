@@ -19,6 +19,10 @@ const Campus = sequelize.define("campus", {
     type: Sequelize.STRING,
     allowNull: false
   },
+  country: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
   creation: {
     type: Sequelize.STRING,
     allowNull: false
