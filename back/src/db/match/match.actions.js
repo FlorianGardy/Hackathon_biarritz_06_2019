@@ -1,5 +1,6 @@
 const { Match } = require("./match.model");
 const getMatchesFromAPI = require("../../API/getMatchesFromAPI");
+const calculateElos = require("./eloFunctions");
 
 // Update matches (from API data)
 async function refreshMatches() {
@@ -18,7 +19,10 @@ async function refreshMatches() {
       }
     }
     if (found === false) {
-      await Match.create(matchAPI);
+      const matchWithElo = await calculateElos(matchAPI);
+      if (matchWithElo) {
+        await Match.create(matchWithElo);
+      }
       console.log(
         matchAPI.homeTeam,
         "vs",
@@ -27,12 +31,6 @@ async function refreshMatches() {
       );
     }
   });
-}
-
-// Calculate ELOs
-function calculateElos() {
-  // update Elo info in matches
-  // update currentElo in campuses
 }
 
 // Get all matches from DB
