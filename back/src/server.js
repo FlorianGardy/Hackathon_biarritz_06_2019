@@ -33,11 +33,11 @@ const init = async () => {
     });
   await server.start();
   console.log("Server running on %s", server.info.uri);
-  // cron.schedule("*/2 * * * * *", async () => {
-  await refreshWilders();
-  await refreshCampuses();
-  await refreshMatches();
-  // });
+  cron.schedule("*/5 * * * *", async () => {
+    await refreshWilders();
+    await refreshCampuses();
+    await refreshMatches();
+  });
 };
 
 // Logs management
