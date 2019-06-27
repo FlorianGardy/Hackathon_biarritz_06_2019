@@ -20,9 +20,16 @@ const server = Hapi.server({
 server.route(require("./routes/campuses.routes"));
 server.route(require("./routes/matches.routes"));
 
-const init = async () => {
+exports.init = async () => {
   const sequelize = require("./db/connect");
-  sequelize.sync();
+  await sequelize.sync({ force: true });
+  await server.initialize();
+  return server;
+};
+
+exports.start = async () => {
+  const sequelize = require("./db/connect");
+  sequelize.sync({ force: true });
   sequelize
     .authenticate()
     .then(() => {
@@ -34,8 +41,13 @@ const init = async () => {
   await server.start();
   console.log("Server running on %s", server.info.uri);
 
+  // Data refresh from API (Launched one time when server start)
+  await refreshCampuses();
+  await refreshWilders();
+  await refreshMatches();
+
   // Data refresh from API (launched periodically)
-  cron.schedule("*/2 * * * *", async () => {
+  cron.schedule("*/10 * * * * *", async () => {
     await refreshCampuses();
     await refreshWilders();
     await refreshMatches();
@@ -60,5 +72,3 @@ process.on("unhandledRejection", err => {
   console.log(err);
   process.exit(1);
 });
-
-init();
