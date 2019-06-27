@@ -2,6 +2,7 @@ import React from "react";
 import { Card, CardText, CardDeck, CardBody, CardHeader } from "reactstrap";
 
 import NewDuels from "../fonctions/dernierduels.fonction.deck";
+import NewClassement from "../fonctions/classement.fonction.deck";
 
 const cardDecks = props => {
   return (
@@ -22,8 +23,7 @@ const cardDecks = props => {
         </CardHeader>
         <CardBody>
           <CardText>
-            This card has supporting text below as a natural lead-in to
-            additional content.
+            <NewClassement />
           </CardText>
         </CardBody>
       </Card>
