@@ -8,7 +8,7 @@ const CampusContainer = ({ dispatch, campuses }) => {
     console.log("coucou");
 
     dispatch(updateCampuses());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>
