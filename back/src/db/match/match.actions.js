@@ -22,13 +22,13 @@ async function refreshMatches() {
       const matchWithElo = await calculateElos(matchAPI);
       if (matchWithElo) {
         await Match.create(matchWithElo);
+        console.log(
+          matchAPI.homeTeam,
+          "vs",
+          matchAPI.awayTeam,
+          "added to database"
+        );
       }
-      console.log(
-        matchAPI.homeTeam,
-        "vs",
-        matchAPI.awayTeam,
-        "added to database"
-      );
     }
   });
 }
