@@ -33,6 +33,8 @@ const init = async () => {
     });
   await server.start();
   console.log("Server running on %s", server.info.uri);
+
+  // Data refresh from API (launched periodically)
   cron.schedule("*/2 * * * *", async () => {
     await refreshCampuses();
     await refreshWilders();

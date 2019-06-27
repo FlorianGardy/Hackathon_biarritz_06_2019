@@ -5,17 +5,15 @@ const getCampusesFromAPI = require("../../API/getCampusesFromAPI");
 async function refreshCampuses() {
   const campusesFromApi = await getCampusesFromAPI();
   const campusesFromDb = await Campus.findAll();
-  campusesFromApi.map(async campusAPI => {
-    let found = false;
-    for (let i = 0; i < campusesFromDb.length; i++) {
-      if (campusesFromDb[i].uid === campusAPI.uid) {
-        found = true;
-        break;
-      }
-    }
-    if (found === false) {
-      await Campus.create(campusAPI);
-      console.log(campusAPI.name, "added to database");
+
+  campusesFromApi.forEach(campusFromAPI => {
+    const campusExistsInDB = campusesFromDb.some(
+      campusFromDB => campusFromDB.uid === campusFromAPI.uid
+    );
+    if (!campusExistsInDB) {
+      Campus.create(campusFromAPI).then(() => {
+        console.log(`${campusFromAPI.name} created in database`);
+      });
     }
   });
 }
