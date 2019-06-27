@@ -30,7 +30,7 @@ const Match = sequelize.define("match", {
   },
   winnerUid: {
     type: Sequelize.STRING,
-    allowNull: false
+    allowNull: true
     // references: {
     //   model: Campus,
     //   key: "uid"
