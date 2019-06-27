@@ -1,12 +1,12 @@
 import React from "react";
 import WildersContainer from "../pills/wilders/wilders.container";
 
-const Wilders = () => {
-  // const campusId = match.params.campusId;
+const Wilders = ({ match }) => {
+  const campusId = match.params.campusId;
 
   return (
     <div>
-      <WildersContainer />
+      <WildersContainer campusId={campusId} />
     </div>
   );
 };
