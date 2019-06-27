@@ -124,7 +124,7 @@ const NewClassement = () => {
       <ul>
         {classement
           .map(classe => (
-            <li>
+            <li className="text-success">
               {classe.name} - {classe.country} - {classe.city}
             </li>
           ))
@@ -133,7 +133,7 @@ const NewClassement = () => {
       <ul>
         {classement
           .map(classe => (
-            <li>
+            <li className="text-danger">
               {classe.name} - {classe.country} - {classe.city}
             </li>
           ))
