@@ -22,8 +22,9 @@ Pour lancer l'application :
 2- lancer le front
 
 - cloner le repo
-- se déplacer dans le dossier front (cd front)
-- npm install
+- se déplacer dans le dossier Hackathon_biarritz_06_2019_ front (cd Hackathon_biarritz_06_2019_ front)
+- se déplacer dans le doosier front (cd front)
+- npm install 
 - npm start
 
 SUJET
