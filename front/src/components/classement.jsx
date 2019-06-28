@@ -1,27 +1,43 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
 import { getCampuses } from "../pills/campuses/campuses.action";
 
 const classement = [getCampuses];
 
-const NewClassement = () => {
+const NewClassement = ({ campuses, dispatch }) => {
+  useEffect(() => {
+    dispatch(getCampuses());
+  }, [dispatch]);
   return (
     <div>
-      {classement
+      {campuses
+        .sort((a, b) => {
+          return a - b;
+        })
         .map((classe, index) => (
           <div key={index} className="text-success">
             {classe.name} - {classe.country} - {classe.city}
           </div>
         ))
         .slice(0, 3)}
-      {classement
+      {campuses
+        .sort((a, b) => {
+          return b - a;
+        })
         .map((classe, index) => (
           <div key={index} className="text-danger">
             {classe.name} - {classe.country} - {classe.city}
           </div>
         ))
-        .slice(classement.length - 3, classement.length)}
+        .slice(campuses.length - 3, campuses.length)}
     </div>
   );
 };
 
-export default NewClassement;
+const mapStateToProps = state => {
+  return {
+    campuses: state.campusesReducer.campuses
+  };
+};
+
+export default connect(mapStateToProps)(NewClassement);
