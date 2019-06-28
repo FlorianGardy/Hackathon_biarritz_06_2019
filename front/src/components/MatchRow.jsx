@@ -37,13 +37,17 @@ const MatchRow = ({
   return (
     <>
       {winnerUid !== null ? (
-        <th colSpan={4} style={playedStyle}>
-          {isoDate}
-        </th>
+        <tr>
+          <td colSpan={2} style={playedStyle}>
+            {isoDate}
+          </td>
+        </tr>
       ) : (
-        <th colSpan={4} style={notPlayedStyle}>
-          Comming Soon - {isoDate}
-        </th>
+        <tr>
+          <td colSpan={2} style={notPlayedStyle}>
+            Comming Soon - {isoDate}
+          </td>
+        </tr>
       )}
       <tr>
         {winnerUid === awayTeam ? (
