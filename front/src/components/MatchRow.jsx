@@ -17,9 +17,13 @@ const MatchRow = ({
     <>
       <tr>{isoDate}</tr>
       <tr>
-        <td style={{ color: winnerUid === homeTeam ? "green" : "red" }}>
-          {homeEloDiff}
-        </td>
+        {winnerUid !== null ? (
+          <td style={{ color: winnerUid === homeTeam ? "green" : "red" }}>
+            {homeEloDiff}
+          </td>
+        ) : (
+          <td>Coming Soon</td>
+        )}
         <td>
           {homeName}({homeTeam})
         </td>
@@ -37,7 +41,7 @@ const MatchRow = ({
 MatchRow.propTypes = {
   homeTeam: PropTypes.string.isRequired,
   awayTeam: PropTypes.string.isRequired,
-  isoDate: PropTypes.string.isRequired,
+  isoDate: PropTypes.string,
   winnerUid: PropTypes.string,
   homeElo: PropTypes.string.isRequired,
   awayElo: PropTypes.string.isRequired,

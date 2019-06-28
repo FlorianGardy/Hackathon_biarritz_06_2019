@@ -4,7 +4,13 @@ import { Table } from "reactstrap";
 
 const MatchesView = ({ matches, campus }) => {
   return (
-    <Table responsive>
+    <Table
+      responsive
+      hover
+      size="ml"
+      className="p-3 my-5"
+      style={{ backgroundColor: "#FFF" }}
+    >
       <thead>
         <tr>
           <th>Liste des duels</th>

@@ -4,7 +4,13 @@ import { Table } from "reactstrap";
 
 const WildersView = ({ wildersFromOneCampus }) => {
   return (
-    <Table responsive>
+    <Table
+      responsive
+      hover
+      size="ml"
+      className="p-3 my-5"
+      style={{ backgroundColor: "#FFF" }}
+    >
       <thead>
         <tr>
           <th>Firstname</th>
