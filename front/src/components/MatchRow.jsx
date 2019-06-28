@@ -1,6 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+const playedStyle = {
+  textAlign: "center",
+  fontSize: "1rem",
+  color: "white",
+  backgroundColor: "#5bc15b"
+};
+
+const notPlayedStyle = {
+  textAlign: "center",
+  fontSize: "1rem",
+  color: "white",
+  backgroundColor: "#ca4116"
+};
+
 const MatchRow = ({
   homeTeam,
   homeName,
@@ -15,14 +29,28 @@ const MatchRow = ({
 }) => {
   return (
     <>
-      <tr>{isoDate}</tr>
+      {winnerUid !== null ? (
+        <th colSpan={4} style={playedStyle}>
+          {isoDate}
+        </th>
+      ) : (
+        <th colSpan={4} style={notPlayedStyle}>
+          {isoDate}
+        </th>
+      )}
       <tr>
         {winnerUid !== null ? (
-          <td style={{ color: winnerUid === homeTeam ? "green" : "red" }}>
+          <td
+            style={{
+              color: winnerUid === homeTeam ? "green" : "red",
+              width: "20vw",
+              fontSize: "1.2rem"
+            }}
+          >
             {homeEloDiff}
           </td>
         ) : (
-          <td>Coming Soon</td>
+          <td style={{ color: "gray" }}>Coming Soon</td>
         )}
         <td>
           {homeName}({homeTeam})
@@ -30,7 +58,13 @@ const MatchRow = ({
         <td>
           {awayName}({awayTeam})
         </td>
-        <td style={{ color: winnerUid === awayTeam ? "green" : "red" }}>
+        <td
+          style={{
+            color: winnerUid === awayTeam ? "green" : "red",
+            width: "20vw",
+            fontSize: "1.2rem"
+          }}
+        >
           {awayEloDiff}
         </td>
       </tr>

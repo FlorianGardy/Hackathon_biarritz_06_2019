@@ -1,6 +1,9 @@
 .App {
-  background-image: url("https://www.gheda.eu/wp-content/uploads/2017/05/immagine-linea-dogdog-wild.jpg");
+  background: center / cover no-repeat
+    url("https://www.gheda.eu/wp-content/uploads/2017/05/immagine-linea-dogdog-wild.jpg");
   text-transform: uppercase;
   text-align: center;
-  /* color: green!important; */
+}
+td {
+  padding: 8px !important ;
 }

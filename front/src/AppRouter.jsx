@@ -11,7 +11,7 @@ import Footer from "./components/Footer";
 function AppRouter() {
   return (
     <Router>
-      <Container fluid className="vh-100 p-5">
+      <Container fluid className="p-5 min-vh-100">
         <NavBar />
         <Switch>
           <Route path="/" exact component={Home} />
@@ -19,8 +19,8 @@ function AppRouter() {
           <Route path="/matches" exact component={Matches} />
           <Route path="/campuses/:campusId/wilders" exact component={Wilders} />
         </Switch>
-        <Footer />
       </Container>
+      <Footer />
     </Router>
   );
 }

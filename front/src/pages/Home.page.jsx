@@ -5,7 +5,6 @@ import "../App.css";
 const Home = () => {
   return (
     <div>
-      <h2>HOME</h2>
       <CardDecks />
     </div>
   );
