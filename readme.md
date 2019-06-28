@@ -7,7 +7,7 @@
 ```git clone git@github.com:FlorianGardy/Hackathon_biarritz_06_2019.git```
 ```mv -r Hackathon_biarritz_06_2019 backend```
 - se déplacer dans le dossier Hackathon_biarritz_06_2019/back : 
-```cd Hackathon_biarritz_06_2019/front```
+```cd backend/back```
 - Installer les dépendances : 
 ```npm install```
 - Créer une base de donnée postgreSQL
@@ -23,7 +23,7 @@
 ```git clone git@github.com:FlorianGardy/Hackathon_biarritz_06_2019.git```
 ```mv -r Hackathon_biarritz_06_2019 frontend```
 - se déplacer dans le dossier Hackathon_biarritz_06_2019/front : 
-```cd Hackathon_biarritz_06_2019/front```
+```cd frontend/front```
 - Installer les dépendances : 
 ```npm install```
 - Démarrer le server
