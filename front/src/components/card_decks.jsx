@@ -6,10 +6,10 @@ import NewClassement from "./classement";
 
 const cardDecks = props => {
   return (
-    <CardDeck className="mt-5">
+    <CardDeck className="mt-5" style={{ fontSize: "1.2em" }}>
       <Card>
         <CardHeader>
-          <h3>Dernier Duels.</h3>
+          <h3>Dernier Duels</h3>
         </CardHeader>
         <CardBody>
           <NewDuels />
@@ -17,7 +17,7 @@ const cardDecks = props => {
       </Card>
       <Card>
         <CardHeader>
-          <h3>Classement / Campus.</h3>
+          <h3>Classement / Campus</h3>
         </CardHeader>
         <CardBody>
           <NewClassement />
