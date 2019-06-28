@@ -8,6 +8,7 @@ const Hapi = require("@hapi/hapi");
 const { refreshCampuses } = require("./db/campus/campus.actions");
 const { refreshWilders } = require("./db/wilder/wilder.actions");
 const { refreshMatches } = require("./db/match/match.actions");
+const { updateElo } = require("./db/match/newElo");
 
 const server = Hapi.server({
   port: 3030,
@@ -29,15 +30,14 @@ exports.init = async () => {
 
 exports.start = async () => {
   const sequelize = require("./db/connect");
-  sequelize.sync({ force: true });
-  sequelize
-    .authenticate()
-    .then(() => {
-      console.log("Connection has been established successfully.");
-    })
-    .catch(err => {
-      console.error("Unable to connect to the database:", err);
-    });
+  await sequelize.sync({ force: true });
+  await sequelize.authenticate();
+  // .then(() => {
+  //   console.log("Connection has been established successfully.");
+  // })
+  // .catch(err => {
+  //   console.error("Unable to connect to the database:", err);
+  // });
   await server.start();
   console.log("Server running on %s", server.info.uri);
 
@@ -45,12 +45,14 @@ exports.start = async () => {
   await refreshCampuses();
   await refreshWilders();
   await refreshMatches();
+  await updateElo();
 
   // Data refresh from API (launched periodically)
   cron.schedule("*/10 * * * * *", async () => {
     await refreshCampuses();
     await refreshWilders();
     await refreshMatches();
+    await updateElo();
     console.log("Data refreshed from API");
   });
 };

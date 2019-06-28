@@ -32,9 +32,9 @@ const Campus = sequelize.define("campus", {
     allowNull: false
   },
   currentElo: {
-    type: Sequelize.STRING,
+    type: Sequelize.INTEGER,
     allowNull: false,
-    defaultValue: "1000"
+    defaultValue: 1000
   }
 });
 

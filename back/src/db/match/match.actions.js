@@ -1,6 +1,7 @@
+const { Campus } = require("../campus/campus.model");
 const { Match } = require("./match.model");
 const getMatchesFromAPI = require("../../API/getMatchesFromAPI");
-const calculateElos = require("./eloFunctions");
+const calculateElo = require("./eloFunctions");
 
 // Update matches (from API data)
 async function refreshMatches() {
@@ -18,17 +19,8 @@ async function refreshMatches() {
         break;
       }
     }
-    if (found === false) {
-      const matchWithElo = await calculateElos(matchAPI);
-      if (matchWithElo) {
-        await Match.create(matchWithElo);
-        console.log(
-          matchAPI.homeTeam,
-          "vs",
-          matchAPI.awayTeam,
-          "added to database"
-        );
-      }
+    if (!found) {
+      await Match.create(matchAPI);
     }
   });
 }
@@ -38,4 +30,4 @@ function getMatches() {
   return Match.findAll();
 }
 
-module.exports = { refreshMatches, calculateElos, getMatches };
+module.exports = { refreshMatches, calculateElo, getMatches };

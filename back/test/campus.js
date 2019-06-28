@@ -65,7 +65,6 @@ describe("# Campus", () => {
       should(payload).match([campus1, campus2]);
     });
   });
-  // ##########################################################################################################
   describe("## GET /campuses/:id/wilders", () => {
     it("responds with 200", async () => {
       const res = await server.inject({

@@ -1,43 +1,34 @@
 const { Campus } = require("../campus/campus.model");
 
 module.exports = async function(match) {
-  const homeElo = await Campus.findOne({
+  const home = await Campus.findOne({
     attributes: ["currentElo", "uid"],
     where: {
       uid: match.homeTeam
     }
   }).catch(err => console.log(err));
 
-  const awayElo = await Campus.findOne({
+  const away = await Campus.findOne({
     attributes: ["currentElo", "uid"],
     where: {
       uid: match.awayTeam
     }
   }).catch(err => console.log(err));
 
-  if (homeElo && awayElo) {
-    const Rating = await getRatingDelta(homeElo.currentElo, awayElo.currentElo);
+  const homeEloRatingDelta = getRatingDelta(home.currentElo, away.currentElo);
 
-    if (match.homeTeam === match.winnerUid) {
-      homeNewElo = parseInt(homeElo.currentElo) + Rating;
-      awayNewElo = awayElo.currentElo - Rating;
-    } else {
-      homeNewElo = homeElo.currentElo - Rating;
-      awayNewElo = parseInt(awayElo.currentElo) + Rating;
-    }
+  homeNewElo = home.currentElo + homeEloRatingDelta;
+  awayNewElo = away.currentElo - homeEloRatingDelta;
 
-    Campus.update({ currentElo: homeNewElo }, { where: { uid: homeElo.uid } });
-    Campus.update({ currentElo: awayNewElo }, { where: { uid: awayElo.uid } });
+  await Campus.update({ currentElo: homeNewElo }, { where: { uid: home.uid } });
+  await Campus.update({ currentElo: awayNewElo }, { where: { uid: away.uid } });
 
-    return {
-      ...match,
-      homeElo: homeNewElo,
-      awayElo: awayNewElo,
-      homeEloDiff: homeNewElo - homeElo.currentElo,
-      awayEloDiff: awayNewElo - awayElo.currentElo
-    };
-  }
-  return null;
+  return {
+    homeElo: homeNewElo,
+    awayElo: awayNewElo,
+    homeEloDiff: homeNewElo,
+    awayEloDiff: homeNewElo
+  };
 };
 
 function getRatingDelta(team1, team2) {
