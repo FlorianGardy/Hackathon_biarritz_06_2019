@@ -37,19 +37,19 @@ const Match = sequelize.define("match", {
     // }
   },
   homeElo: {
-    type: Sequelize.STRING,
+    type: Sequelize.INTEGER,
     allowNull: true
   },
   awayElo: {
-    type: Sequelize.STRING,
+    type: Sequelize.INTEGER,
     allowNull: true
   },
   homeEloDiff: {
-    type: Sequelize.STRING,
+    type: Sequelize.INTEGER,
     allowNull: true
   },
   awayEloDiff: {
-    type: Sequelize.STRING,
+    type: Sequelize.INTEGER,
     allowNull: true
   }
 });
