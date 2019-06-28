@@ -9,7 +9,7 @@ const cardDecks = props => {
     <CardDeck>
       <Card>
         <CardHeader>
-          <h3>Dernier Duels.</h3>
+          <h3>Dernier Duels</h3>
         </CardHeader>
         <CardBody>
           <NewDuels />
@@ -17,7 +17,7 @@ const cardDecks = props => {
       </Card>
       <Card>
         <CardHeader>
-          <h3>Classement / Campus.</h3>
+          <h3>Classement / Campus</h3>
         </CardHeader>
         <CardBody>
           <NewClassement />
