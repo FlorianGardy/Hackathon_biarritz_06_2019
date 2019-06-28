@@ -34,7 +34,8 @@ export default class Example extends React.Component {
           <NavbarBrand>
             <h1>
               {" "}
-              WILD <FontAwesomeIcon icon={faBolt} color="yellow" />
+              WILD{" "}
+              <FontAwesomeIcon icon={faBolt} color="yellow" className="mr-3" />
               WAR
             </h1>
           </NavbarBrand>
@@ -42,13 +43,37 @@ export default class Example extends React.Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem className="mr-3">
-                <NavLink to="/">Home</NavLink>
+                <NavLink
+                  to="/"
+                  style={{
+                    fontWeight: "bold",
+                    color: "white"
+                  }}
+                >
+                  Home
+                </NavLink>
               </NavItem>
               <NavItem className="mr-3">
-                <NavLink to="/campuses">Campuses</NavLink>
+                <NavLink
+                  to="/campuses"
+                  style={{
+                    fontWeight: "bold",
+                    color: "white"
+                  }}
+                >
+                  Campuses
+                </NavLink>
               </NavItem>
               <NavItem className="mr-3">
-                <NavLink to="/matches">Matches</NavLink>
+                <NavLink
+                  to="/matches"
+                  style={{
+                    fontWeight: "bold",
+                    color: "white"
+                  }}
+                >
+                  Matches
+                </NavLink>
               </NavItem>
             </Nav>
           </Collapse>
