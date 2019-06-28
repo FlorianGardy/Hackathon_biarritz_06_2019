@@ -1,3 +1,32 @@
+PROJET HACKATHON WILD WAR
+
+Pour lancer l'application :
+
+1- lancer le serveur back
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2- lancer le front
+
+- cloner le repo
+- se déplacer dans le dossier front (cd front)
+- npm install
+- npm start
+
+SUJET
 Wild Code League
 Hackathon
 
