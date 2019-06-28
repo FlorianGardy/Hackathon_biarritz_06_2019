@@ -25,7 +25,7 @@ const CampusRow = ({
       </td>
       <td>{creationDate}</td>
       <td>
-        <NavLink to={`/campuses/${uid}/wilders`}>List</NavLink>
+        <NavLink to={`/campuses/${uid}/wilders`}>Show</NavLink>
       </td>
     </tr>
   );

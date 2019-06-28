@@ -7,24 +7,38 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 const styleNavbar = {
   display: "flex",
-  justifyContent: "center",
-  alignItems: "center"
+  justifyContent: "space-between",
+  alignItems: "center",
+  fontSize: "10px"
+};
+const styleDiv = {
+  display: "flex",
+  alignItems: "center",
+  flexWrap: "wrap",
+  textTransform: "none"
 };
 
 function Footer() {
   return (
     <>
-      <Navbar className="fixed-bottom justify-center navbar-dark bg-dark text-light">
-        <NavLink className="ml-3 text-white text-left">
-          <FontAwesomeIcon icon={faCopyright} className="mr-3 text-white" />
+      <Navbar
+        style={styleNavbar}
+        className="fixed-bottom navbar-dark bg-dark text-light"
+      >
+        <NavLink className="text-white text-left">
+          <FontAwesomeIcon
+            icon={faCopyright}
+            style={{ fontSize: "15px" }}
+            className="mr-3 text-white"
+          />
           2019
         </NavLink>
-        <div style={styleNavbar}>
+        <div style={styleDiv}>
           <FontAwesomeIcon
             icon={faLinkedin}
             size="2x"
             className="mr-4"
-            style={{ fontSize: "25px" }}
+            style={{ fontSize: "15px" }}
           />
           Réalisé par
           <NavLink

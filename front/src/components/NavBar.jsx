@@ -30,9 +30,15 @@ export default class Example extends React.Component {
   render() {
     return (
       <div>
-        <Navbar color="dark" light expand="md" className="text-light">
+        <Navbar
+          color="dark"
+          light
+          expand="md"
+          className="text-light"
+          style={{ height: "10vh" }}
+        >
           <NavbarBrand>
-            <h1>
+            <h1 style={{ fontSize: "2rem" }}>
               {" "}
               WILD{" "}
               <FontAwesomeIcon icon={faBolt} color="yellow" className="mr-3" />
@@ -44,11 +50,13 @@ export default class Example extends React.Component {
             <Nav className="ml-auto" navbar>
               <NavItem className="mr-3">
                 <NavLink
-                  to="/"
+                  to="/home"
                   style={{
                     fontWeight: "bold",
-                    color: "white"
+                    color: "white",
+                    textDecoration: "none"
                   }}
+                  activeStyle={{ color: "#5bc15b" }}
                 >
                   Home
                 </NavLink>
@@ -58,8 +66,10 @@ export default class Example extends React.Component {
                   to="/campuses"
                   style={{
                     fontWeight: "bold",
-                    color: "white"
+                    color: "white",
+                    textDecoration: "none"
                   }}
+                  activeStyle={{ color: "#5bc15b" }}
                 >
                   Campuses
                 </NavLink>
@@ -69,8 +79,10 @@ export default class Example extends React.Component {
                   to="/matches"
                   style={{
                     fontWeight: "bold",
-                    color: "white"
+                    color: "white",
+                    textDecoration: "none"
                   }}
+                  activeStyle={{ color: "#5bc15b" }}
                 >
                   Matches
                 </NavLink>
