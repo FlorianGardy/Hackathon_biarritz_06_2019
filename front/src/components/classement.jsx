@@ -2,8 +2,6 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { getCampuses } from "../pills/campuses/campuses.action";
 
-const classement = [getCampuses];
-
 const NewClassement = ({ campuses, dispatch }) => {
   useEffect(() => {
     dispatch(getCampuses());
@@ -16,7 +14,7 @@ const NewClassement = ({ campuses, dispatch }) => {
         })
         .map((classe, index) => (
           <div key={index} className="text-success">
-            {classe.name} - {classe.country} - {classe.city}
+            [{index + 1}] {classe.name} - {classe.country} - {classe.city}
           </div>
         ))
         .slice(0, 3)}
@@ -26,7 +24,7 @@ const NewClassement = ({ campuses, dispatch }) => {
         })
         .map((classe, index) => (
           <div key={index} className="text-danger">
-            {classe.name} - {classe.country} - {classe.city}
+            [{index + 1}]{classe.name} - {classe.country} - {classe.city}
           </div>
         ))
         .slice(campuses.length - 3, campuses.length)}
