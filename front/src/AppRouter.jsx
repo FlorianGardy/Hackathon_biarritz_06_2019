@@ -11,16 +11,17 @@ import Footer from "./components/Footer";
 function AppRouter() {
   return (
     <Router>
-      <Container fluid className="vh-100">
+      <Container fluid className="p-5 min-vh-100">
         <NavBar />
         <Switch>
           <Route path="/" exact component={Home} />
+          <Route path="/home" exact component={Home} />
           <Route path="/campuses" exact component={Campuses} />
           <Route path="/matches" exact component={Matches} />
-          <Route path="/campuses/:campusId/wilders" exact component={Wilders} />
+          <Route path="/campuses/:campusId/wilders" component={Wilders} />
         </Switch>
-        <Footer />
       </Container>
+      <Footer />
     </Router>
   );
 }

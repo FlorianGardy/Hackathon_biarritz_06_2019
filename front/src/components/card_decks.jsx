@@ -6,7 +6,7 @@ import NewClassement from "./classement";
 
 const cardDecks = props => {
   return (
-    <CardDeck>
+    <CardDeck className="mt-5">
       <Card>
         <CardHeader>
           <h3>Dernier Duels</h3>
