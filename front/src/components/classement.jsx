@@ -7,24 +7,25 @@ const NewClassement = ({ campuses, dispatch }) => {
     dispatch(getCampuses());
   }, [dispatch]);
   return (
-    <div>
+    <div style={{ textAlign: "left" }}>
       {campuses
         .sort((a, b) => {
           return a - b;
         })
         .map((classe, index) => (
           <div key={index} className="text-success">
-            [{index + 1}] {classe.name} - {classe.country} - {classe.city}
+            [{index + 1}] - {classe.name} - {classe.country} - {classe.city}
           </div>
         ))
         .slice(0, 3)}
+      <hr style={{ border: "0.5px solid gray" }} />
       {campuses
         .sort((a, b) => {
           return b - a;
         })
         .map((classe, index) => (
           <div key={index} className="text-danger">
-            [{index + 1}]{classe.name} - {classe.country} - {classe.city}
+            [{index + 1}] - {classe.name} - {classe.country} - {classe.city}
           </div>
         ))
         .slice(campuses.length - 3, campuses.length)}

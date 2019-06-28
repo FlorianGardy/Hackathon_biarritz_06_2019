@@ -15,6 +15,13 @@ const notPlayedStyle = {
   backgroundColor: "#ca4116"
 };
 
+const winnerColor = {
+  color: "#5bc15b"
+};
+const looserColor = {
+  color: "#ca4116"
+};
+
 const MatchRow = ({
   homeTeam,
   homeName,
@@ -35,41 +42,28 @@ const MatchRow = ({
         </th>
       ) : (
         <th colSpan={4} style={notPlayedStyle}>
-          {isoDate}
+          Comming Soon - {isoDate}
         </th>
       )}
       <tr>
-        {winnerUid !== null ? (
-          <td
-            style={{
-              color: winnerUid === homeTeam ? "green" : "red",
-              width: "20vw",
-              fontSize: "1.2rem"
-            }}
-          >
-            {homeEloDiff}
+        {winnerUid === awayTeam ? (
+          <td style={looserColor}>
+            {homeName}({homeTeam})
           </td>
         ) : (
-          <td style={{ color: "gray" }}>Coming Soon</td>
+          <td style={winnerColor}>
+            {homeName}({homeTeam})
+          </td>
         )}
-        <td>
-          {homeName}({homeTeam})
-        </td>
-        <td>
-          {awayName}({awayTeam})
-        </td>
-        {winnerUid !== null ? (
-          <td
-            style={{
-              color: winnerUid === homeTeam ? "green" : "red",
-              width: "20vw",
-              fontSize: "1.2rem"
-            }}
-          >
-            {awayEloDiff}
+
+        {winnerUid === homeTeam ? (
+          <td style={looserColor}>
+            {awayName}({awayTeam})
           </td>
         ) : (
-          <td style={{ color: "gray" }}></td>
+          <td style={winnerColor}>
+            {awayName}({awayTeam})
+          </td>
         )}
       </tr>
     </>
