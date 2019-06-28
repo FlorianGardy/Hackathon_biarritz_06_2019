@@ -58,15 +58,19 @@ const MatchRow = ({
         <td>
           {awayName}({awayTeam})
         </td>
-        <td
-          style={{
-            color: winnerUid === awayTeam ? "green" : "red",
-            width: "20vw",
-            fontSize: "1.2rem"
-          }}
-        >
-          {awayEloDiff}
-        </td>
+        {winnerUid !== null ? (
+          <td
+            style={{
+              color: winnerUid === homeTeam ? "green" : "red",
+              width: "20vw",
+              fontSize: "1.2rem"
+            }}
+          >
+            {awayEloDiff}
+          </td>
+        ) : (
+          <td style={{ color: "gray" }}></td>
+        )}
       </tr>
     </>
   );

@@ -15,9 +15,10 @@ function AppRouter() {
         <NavBar />
         <Switch>
           <Route path="/" exact component={Home} />
+          <Route path="/home" exact component={Home} />
           <Route path="/campuses" exact component={Campuses} />
           <Route path="/matches" exact component={Matches} />
-          <Route path="/campuses/:campusId/wilders" exact component={Wilders} />
+          <Route path="/campuses/:campusId/wilders" component={Wilders} />
         </Switch>
       </Container>
       <Footer />
