@@ -7,3 +7,6 @@
 td {
   padding: 8px !important ;
 }
+.NavItem {
+  text-decoration: none;
+}
