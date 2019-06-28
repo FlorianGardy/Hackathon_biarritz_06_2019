@@ -75,10 +75,10 @@ MatchRow.propTypes = {
   awayTeam: PropTypes.string.isRequired,
   isoDate: PropTypes.string,
   winnerUid: PropTypes.string,
-  homeElo: PropTypes.string.isRequired,
-  awayElo: PropTypes.string.isRequired,
-  homeEloDiff: PropTypes.string.isRequired,
-  awayEloDiff: PropTypes.string.isRequired
+  homeElo: PropTypes.string,
+  awayElo: PropTypes.string,
+  homeEloDiff: PropTypes.string,
+  awayEloDiff: PropTypes.string
 };
 
 export default MatchRow;
