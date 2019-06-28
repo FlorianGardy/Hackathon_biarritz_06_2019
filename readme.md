@@ -1,33 +1,35 @@
-PROJET HACKATHON WILD WAR
+#PROJET HACKATHON WILD WAR
 
-Pour lancer l'application :
+##Pour lancer l'application :
 
-1- lancer le serveur back
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+1- Démarrage du serveur back end
+- cloner le repo et le renommer backend: 
+```git clone git@github.com:FlorianGardy/Hackathon_biarritz_06_2019.git```
+```mv -r Hackathon_biarritz_06_2019 backend```
+- se déplacer dans le dossier Hackathon_biarritz_06_2019/back : 
+```cd Hackathon_biarritz_06_2019/front```
+- Installer les dépendances : 
+```npm install```
+- Créer une base de donnée postgreSQL
+- Créer un fichier .env et le remplir avec les informations de connexion à une base postgreSQL: 
+```echo "DB_HOST=localhost DB_USER=myUser DB_PASS=myPassword DB_NAME=myDatabase" >> .env```
+- Démarrer le server
+```npm start```
 
 
-2- lancer le front
+2- Démarrer le server front end
 
-- cloner le repo
-- se déplacer dans le dossier Hackathon_biarritz_06_2019_ front (cd Hackathon_biarritz_06_2019_ front)
-- se déplacer dans le doosier front (cd front)
-- npm install 
-- npm start
+- cloner le repo et le renommer frontend: 
+```git clone git@github.com:FlorianGardy/Hackathon_biarritz_06_2019.git```
+```mv -r Hackathon_biarritz_06_2019 frontend```
+- se déplacer dans le dossier Hackathon_biarritz_06_2019/front : 
+```cd Hackathon_biarritz_06_2019/front```
+- Installer les dépendances : 
+```npm install```
+- Démarrer le server
+```npm start```
 
-SUJET
+##SUJET
 Wild Code League
 Hackathon
 
