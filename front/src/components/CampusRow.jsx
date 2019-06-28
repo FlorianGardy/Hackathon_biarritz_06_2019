@@ -33,7 +33,7 @@ const CampusRow = ({
 export default CampusRow;
 
 CampusRow.propTypes = {
-  elo: PropTypes.string.isRequired,
+  elo: PropTypes.number,
   country: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   city: PropTypes.string.isRequired,
